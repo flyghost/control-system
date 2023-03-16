@@ -56,7 +56,7 @@ void frmMain::initForm()
     //设置无边框
     QUIHelper::setFramelessForm(this);
     //设置图标
-    IconHelper::setIcon(ui->labIco, 0xf073, 30);
+    IconHelper::setIcon(ui->labIco, 0xf29a, 30);
     IconHelper::setIcon(ui->btnMenu_Min, 0xf068);
     IconHelper::setIcon(ui->btnMenu_Max, 0xf067);
     IconHelper::setIcon(ui->btnMenu_Close, 0xf00d);
@@ -70,7 +70,7 @@ void frmMain::initForm()
     QFont font;
     font.setPixelSize(25);
     ui->labTitle->setFont(font);
-    ui->labTitle->setText("CreekWater");
+    ui->labTitle->setText("人流量控制系统");
     this->setWindowTitle(ui->labTitle->text());
 
     ui->stackedWidget->setStyleSheet("QLabel{font:60px;}");
@@ -79,17 +79,17 @@ void frmMain::initForm()
     int icoWidth = 85;
 
     //设置顶部导航按钮
-    QList<QAbstractButton *> tbtns = ui->widgetTop->findChildren<QAbstractButton *>();
-    foreach (QAbstractButton *btn, tbtns) {
-        btn->setIconSize(icoSize);
-        btn->setMinimumWidth(icoWidth);
-        btn->setCheckable(true);
-        connect(btn, SIGNAL(clicked()), this, SLOT(buttonClick()));
-    }
+    // QList<QAbstractButton *> tbtns = ui->widgetTop->findChildren<QAbstractButton *>();
+    // foreach (QAbstractButton *btn, tbtns) {
+    //     btn->setIconSize(icoSize);
+    //     btn->setMinimumWidth(icoWidth);
+    //     btn->setCheckable(true);
+    //     connect(btn, SIGNAL(clicked()), this, SLOT(buttonClick()));
+    // }
 
-    ui->btnMain->click();
+    // ui->btnMain->click();
 
-    ui->widgetLeftMain->setProperty("flag", "left");
+    // ui->widgetLeftMain->setProperty("flag", "left");
     ui->widgetLeftConfig->setProperty("flag", "left");
     ui->page1->setStyleSheet(QString("QWidget[flag=\"left\"] QAbstractButton{min-height:%1px;max-height:%1px;}").arg(60));
     ui->page2->setStyleSheet(QString("QWidget[flag=\"left\"] QAbstractButton{min-height:%1px;max-height:%1px;}").arg(25));
@@ -97,10 +97,6 @@ void frmMain::initForm()
 
 void frmMain::initStyle()
 {
-    // QUIHelper::loadStyle(":/qss/lightblue.css");
-    // QUIHelper::loadStyle(":/qss/flatgray.css");
-    // QUIHelper::loadStyle(":/qss/blacksoft.css");
-
     //加载样式表
     QString qss;
     QFile file(":/qss/blacksoft.css");
@@ -124,56 +120,28 @@ void frmMain::initStyle()
     this->darkTextColor = normalTextColor;
 }
 
-void frmMain::buttonClick()
-{
-    QAbstractButton *b = (QAbstractButton *)sender();
-    QString name = b->text();
+// void frmMain::buttonClick()
+// {
+//     QAbstractButton *b = (QAbstractButton *)sender();
+//     QString name = b->text();
 
-    QList<QAbstractButton *> tbtns = ui->widgetTop->findChildren<QAbstractButton *>();
-    foreach (QAbstractButton *btn, tbtns) {
-        btn->setChecked(btn == b);
-    }
+//     QList<QAbstractButton *> tbtns = ui->widgetTop->findChildren<QAbstractButton *>();
+//     foreach (QAbstractButton *btn, tbtns) {
+//         btn->setChecked(btn == b);
+//     }
 
-    if (name == "主界面") {
-        ui->stackedWidget->setCurrentIndex(0);
-    } else if (name == "系统设置") {
-        ui->stackedWidget->setCurrentIndex(1);
-    } else if (name == "警情查询") {
-        ui->stackedWidget->setCurrentIndex(2);
-    } else if (name == "调试帮助") {
-        ui->stackedWidget->setCurrentIndex(3);
-    } else if (name == "用户退出") {
-        exit(0);
-    }
-}
-
-void frmMain::leftMainClick()
-{
-    QAbstractButton *b = (QAbstractButton *)sender();
-    QString name = b->text();
-
-    int count = btnsMain.count();
-    for (int i = 0; i < count; ++i) {
-        QAbstractButton *btn = btnsMain.at(i);
-        btn->setChecked(btn == b);
-    }
-
-    ui->lab1->setText(name);
-}
-
-void frmMain::leftConfigClick()
-{
-    QToolButton *b = (QToolButton *)sender();
-    QString name = b->text();
-
-    int count = btnsConfig.count();
-    for (int i = 0; i < count; ++i) {
-        QAbstractButton *btn = btnsConfig.at(i);
-        btn->setChecked(btn == b);
-    }
-
-    ui->lab2->setText(name);
-}
+//     if (name == "主界面") {
+//         ui->stackedWidget->setCurrentIndex(0);
+//     } else if (name == "系统设置") {
+//         ui->stackedWidget->setCurrentIndex(1);
+//     } else if (name == "警情查询") {
+//         ui->stackedWidget->setCurrentIndex(2);
+//     } else if (name == "调试帮助") {
+//         ui->stackedWidget->setCurrentIndex(3);
+//     } else if (name == "用户退出") {
+//         exit(0);
+//     }
+// }
 
 void frmMain::on_btnMenu_Min_clicked()
 {

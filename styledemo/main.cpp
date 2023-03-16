@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 #endif
 
     frmMain w;
-    w.setWindowTitle("CreekWater)");
+    w.setWindowTitle("人流量控制系统)");
     w.show();    
 
     return a.exec();

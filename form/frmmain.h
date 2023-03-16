@@ -47,9 +47,7 @@ private:
 private slots:
     void initForm();
     void initStyle();
-    void buttonClick();
-    void leftMainClick();
-    void leftConfigClick();
+    // void buttonClick();
 
 private slots:
     void on_btnMenu_Min_clicked();
