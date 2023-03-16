@@ -48,8 +48,6 @@ private slots:
     void initForm();
     void initStyle();
     void buttonClick();
-    void initLeftMain();
-    void initLeftConfig();
     void leftMainClick();
     void leftConfigClick();
 
