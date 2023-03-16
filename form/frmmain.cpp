@@ -77,22 +77,6 @@ void frmMain::initForm()
 
     QSize icoSize(32, 32);
     int icoWidth = 85;
-
-    //设置顶部导航按钮
-    // QList<QAbstractButton *> tbtns = ui->widgetTop->findChildren<QAbstractButton *>();
-    // foreach (QAbstractButton *btn, tbtns) {
-    //     btn->setIconSize(icoSize);
-    //     btn->setMinimumWidth(icoWidth);
-    //     btn->setCheckable(true);
-    //     connect(btn, SIGNAL(clicked()), this, SLOT(buttonClick()));
-    // }
-
-    // ui->btnMain->click();
-
-    // ui->widgetLeftMain->setProperty("flag", "left");
-    ui->widgetLeftConfig->setProperty("flag", "left");
-    ui->page1->setStyleSheet(QString("QWidget[flag=\"left\"] QAbstractButton{min-height:%1px;max-height:%1px;}").arg(60));
-    ui->page2->setStyleSheet(QString("QWidget[flag=\"left\"] QAbstractButton{min-height:%1px;max-height:%1px;}").arg(25));
 }
 
 void frmMain::initStyle()
@@ -119,29 +103,6 @@ void frmMain::initStyle()
     this->normalTextColor = textColor;
     this->darkTextColor = normalTextColor;
 }
-
-// void frmMain::buttonClick()
-// {
-//     QAbstractButton *b = (QAbstractButton *)sender();
-//     QString name = b->text();
-
-//     QList<QAbstractButton *> tbtns = ui->widgetTop->findChildren<QAbstractButton *>();
-//     foreach (QAbstractButton *btn, tbtns) {
-//         btn->setChecked(btn == b);
-//     }
-
-//     if (name == "主界面") {
-//         ui->stackedWidget->setCurrentIndex(0);
-//     } else if (name == "系统设置") {
-//         ui->stackedWidget->setCurrentIndex(1);
-//     } else if (name == "警情查询") {
-//         ui->stackedWidget->setCurrentIndex(2);
-//     } else if (name == "调试帮助") {
-//         ui->stackedWidget->setCurrentIndex(3);
-//     } else if (name == "用户退出") {
-//         exit(0);
-//     }
-// }
 
 void frmMain::on_btnMenu_Min_clicked()
 {
