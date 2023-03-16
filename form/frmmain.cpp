@@ -11,6 +11,10 @@ frmMain::frmMain(QWidget *parent) : QWidget(parent), ui(new Ui::frmMain)
     ui->setupUi(this);
     this->initForm();
     this->initStyle();
+
+    testwidget  = new frmCtrl();
+
+    ui->stackedStackedWidget->addWidget(testwidget);
 }
 
 frmMain::~frmMain()
@@ -61,7 +65,6 @@ void frmMain::initForm()
     IconHelper::setIcon(ui->btnMenu_Max, 0xf067);
     IconHelper::setIcon(ui->btnMenu_Close, 0xf00d);
 
-    //ui->widgetMenu->setVisible(false);
     ui->widgetTitle->setProperty("form", "title");
     //关联事件过滤器用于双击放大
     ui->widgetTitle->installEventFilter(this);
@@ -73,7 +76,7 @@ void frmMain::initForm()
     ui->labTitle->setText("人流量控制系统");
     this->setWindowTitle(ui->labTitle->text());
 
-    ui->stackedWidget->setStyleSheet("QLabel{font:60px;}");
+    //ui->stackedWidget->setStyleSheet("QLabel{font:60px;}");
 
     QSize icoSize(32, 32);
     int icoWidth = 85;
@@ -102,6 +105,7 @@ void frmMain::initStyle()
     this->darkBgColor = panelColor;
     this->normalTextColor = textColor;
     this->darkTextColor = normalTextColor;
+    file.close();
 }
 
 void frmMain::on_btnMenu_Min_clicked()
