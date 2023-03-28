@@ -2,6 +2,7 @@
 #define TEST_H
 
 #include <QWidget>
+#include <QListWidgetItem>
 
 namespace Ui {
 class frmCtrl;
@@ -22,14 +23,11 @@ private:
     QString darkBgColor;
     QString normalTextColor;
     QString darkTextColor;
-    void initStyle();
     void initForm();
-    void getQssColor(const QString &qss, const QString &flag, QString &color);
-    void getQssColor(const QString &qss, QString &textColor,
-                     QString &panelColor, QString &borderColor,
-                     QString &normalColorStart, QString &normalColorEnd,
-                     QString &darkColorStart, QString &darkColorEnd,
-                     QString &highColor);
+    void appendLog(const QString &flag);
+
+private slots:
+    void onMessageReceived(const QByteArray& message);
 };
 
 #endif // TEST_H

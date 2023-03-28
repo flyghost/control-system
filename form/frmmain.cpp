@@ -5,6 +5,7 @@
 #include "iconhelper.h"
 #include "quihelper.h"
 #include <QDebug>
+#include "frmctrl.h"
 
 frmMain::frmMain(QWidget *parent) : QWidget(parent), ui(new Ui::frmMain)
 {
@@ -12,9 +13,7 @@ frmMain::frmMain(QWidget *parent) : QWidget(parent), ui(new Ui::frmMain)
     this->initForm();
     this->initStyle();
 
-    testwidget  = new frmCtrl();
-
-    ui->stackedStackedWidget->addWidget(testwidget);
+    ui->widgetMain->addWidget(new frmCtrl);
 }
 
 frmMain::~frmMain()
@@ -86,7 +85,7 @@ void frmMain::initStyle()
 {
     //加载样式表
     QString qss;
-    QFile file(":/qss/blacksoft.css");
+    QFile file(":/qss/lightblue.css");
     if (file.open(QFile::ReadOnly)) {
         qss = QLatin1String(file.readAll());
         QString paletteColor = qss.mid(20, 7);
@@ -107,6 +106,8 @@ void frmMain::initStyle()
     this->darkTextColor = normalTextColor;
     file.close();
 }
+
+
 
 void frmMain::on_btnMenu_Min_clicked()
 {

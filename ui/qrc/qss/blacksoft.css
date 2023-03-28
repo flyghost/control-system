@@ -115,7 +115,6 @@ left:10px;
 border-style:none;
 border:1px solid #242424;
 color:#DCDCDC;
-padding:5px;
 min-height:15px;
 border-radius:5px;
 background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #484848,stop:1 #383838);
@@ -131,6 +130,21 @@ background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #484848,stop:1 
 
 .QToolButton::menu-indicator{
 image:None;
+}
+
+QPushButton#btnFreqIncrease{
+border-radius:3px;
+color:#DCDCDC;
+padding:3px;
+margin:0px;
+background:none;
+border-style:none;
+}
+
+QPushButton#btnFreqIncrease:hover{
+color:#FFFFFF;
+margin:1px 1px 2px 1px;
+background-color:rgba(51,127,209,230);
 }
 
 QToolButton#btnMenu,QPushButton#btnMenu_Min,QPushButton#btnMenu_Max,QPushButton#btnMenu_Close{
@@ -403,7 +417,6 @@ QScrollBar:vertical{
 background:#484848;
 padding:0px;
 border-radius:6px;
-max-width:12px;
 }
 
 QScrollBar::handle:vertical{

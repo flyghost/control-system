@@ -37,7 +37,6 @@ private:
     QString darkBgColor;
     QString normalTextColor;
     QString darkTextColor;
-    frmCtrl *testwidget;
 
     void getQssColor(const QString &qss, const QString &flag, QString &color);
     void getQssColor(const QString &qss, QString &textColor,

@@ -115,7 +115,6 @@ left:10px;
 border-style:none;
 border:1px solid #B6B6B6;
 color:#57595B;
-padding:5px;
 min-height:15px;
 border-radius:5px;
 background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #E4E4E4,stop:1 #E4E4E4);
@@ -403,7 +402,6 @@ QScrollBar:vertical{
 background:#E4E4E4;
 padding:0px;
 border-radius:6px;
-max-width:12px;
 }
 
 QScrollBar::handle:vertical{
